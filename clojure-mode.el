@@ -765,8 +765,8 @@ check for contextual indenting."
   (replace-regexp-in-string "-" "_" namespace))
 
 (defun clojure-test-for (namespace)
-  (let* ((namespace (clojure-underscores-for-hyphens namespace))
-         (segments (split-string namespace "\\."))
+  ;; (namespace (clojure-underscores-for-hyphens namespace))
+  (let* ((segments (split-string namespace "\\."))
          (before (subseq segments 0 clojure-test-ns-segment-position))
          (after (subseq segments clojure-test-ns-segment-position))
          (test-segments (append before (list "test") after)))
